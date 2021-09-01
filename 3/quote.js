@@ -39,4 +39,30 @@ const quoteAuthor=document.getElementById('Author');
 const getIndex=Math.floor(Math.random() * 10);
 quoteText.innerHTML=`<i class="fas fa-quote-left"></i> ${quote[getIndex].quote} <i class="fas fa-quote-right"></i>`;
 quoteAuthor.innerHTML=`-${quote[getIndex].Author}`;
-function getNew
+function getNewquote(){
+    const randomcolour=`#${Math.floor(Math.random() * 1000000)}`
+    body.style.backgroundColor=randomcolour
+    const getIndex=Math.floor(Math.random() * 10);
+    quoteText.innerHTML=`<i class="fas fa-quote-left"></i> ${ quote[getIndex].Quote} <i class="fas fa-quote-right"></i>`;
+    quoteAuthor.innerHTML=`-${quote[getIndex].Author}`;
+}
+const daystatus=document.getElementById('day');
+console.log(daystatus)
+var time=new Date();
+var hour=time.getHours();
+console.log(hour)
+if(hour>=5 && hour<12)
+{
+    daystatus.innerHTML="Morning"
+}
+else if(hour>=12 && hour<16)
+{
+    daystatus.innerHTML="AfterNoon"
+}
+else if(hour>=16 && hour<18)
+{
+    daystatus.innerHTML="Evening"
+}
+else{
+    daystatus.innerHTML="Night"
+}
